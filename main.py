@@ -22,9 +22,7 @@ try:
             print("Sim")
         else:
             print("Não")
-except FileNotFoundError as error:
-    print(error)
-except json.JSONDecodeError as error2:
-    print(error2)
+except Exception:
+    pass
 
 

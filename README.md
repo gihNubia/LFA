@@ -4,7 +4,8 @@
 Erick Rocha, Gisele Nubia
 
 ## Informações para rodar o script na linha de comando
-Usar como no exemplo:
-    python3 main.py mt.json "001100001"
 
-Nenhum módulo precisa ser importado
+É necessário possuir o interpretador python. Nenhum módulo precisa ser adicionado.
+```shell
+python3 main.py mt.json "001100001"
+```
