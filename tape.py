@@ -3,14 +3,13 @@ class Tape:
     def __init__(self, initial, empty, word = None):
         self.initial = initial
         self.empty = empty
+        self.currentPosition = 1
         if word is None:
-            self.content = [empty]
-            self.currentPosition = 0
+            self.content = [initial, empty]
         else:
             self.content = [initial] + list(word)
             if len(self.content) == 1:
                 self.content.append(empty)
-            self.currentPosition = 1
     
     def update_symbol(self, newSymbol):
         self.content[self.currentPosition] = newSymbol

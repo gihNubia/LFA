@@ -1,8 +1,23 @@
+from tape import Tape
+from transition import Transition
+
 class TuringMachine:
     
-    # TODO: Receber parametros da TuringMachine
-    def __init__():
-        pass
+    def __init__(self, word, n_tapes, initial, empty, transitions, initial_state):
+        self.tapes = [Tape(initial, empty, word)]
+        for _ in range(n_tapes - 1):
+            self.tapes.append(Tape(initial, empty))
+        
+        self.transitions = []
+        for t in transitions:
+            cs = t[0]
+            symbols = [t[2][k][0] for k in range(n_tapes)]
+            ns = t[1]
+            nsymbols = [t[2][k][1] for k in range(n_tapes)]
+            directions = [t[2][k][2] for k in range(n_tapes)]
+            self.transitions.append(Transition(cs, symbols, ns, nsymbols, directions))
+        
+        self.current_state = initial_state
     
     def get_next_action(self):
         cs = self.current_state
