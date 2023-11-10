@@ -4,7 +4,10 @@ import json
 from turing_machine import TuringMachine
 
 jsonFile = sys.argv[1]
-tapeContent = sys.argv[2]
+try:
+    tapeContent = sys.argv[2]
+except:
+    tapeContent = ""
 
 try:
     with open (jsonFile, "r") as file_object:
@@ -24,5 +27,3 @@ try:
             print("Não")
 except Exception:
     pass
-
-
